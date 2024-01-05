@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 13:17:24 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 13:17:24 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/05 17:35:23 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/05 17:35:23 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <string>
 # include <algorithm>
 # include <map>
-
 # include "ASpell.hpp"
 # include "ATarget.hpp"
 
@@ -28,24 +27,21 @@ class ATarget;
 class Warlock {
 
 	private:
-		std::string	name;
-		std::string	title;
-		std::map<std::string, ASpell*> _slots;
+		std::string	_name;
+		std::string	_title;
+		std::map<std::string, ASpell*> _spellSlots;
 		Warlock();
-		Warlock(const Warlock& original);
-		Warlock& operator=(const Warlock& original);
+		Warlock(const Warlock& og);
+		Warlock& operator=(const Warlock& og);
 
 	public:
-		~Warlock();
-
 		Warlock(const std::string& name, const std::string& title);
-
+		~Warlock();
 		std::string const& getName() const;
 		std::string const& getTitle() const;
-		void	setTitle(const std::string& input);
-
+		void	setTitle(const std::string& title);
 		void	introduce() const;
-		void	learnSpell(ASpell *spell);
+		void	learnSpell(ASpell* spell);
 		void	forgetSpell(std::string spell);
 		void	launchSpell(std::string spell, const ATarget& target);
 

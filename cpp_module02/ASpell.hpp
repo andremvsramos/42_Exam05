@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 14:03:21 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 14:03:21 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/05 17:46:37 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/05 17:46:37 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # pragma once
 # include <iostream>
 # include <string>
-
 # include "ATarget.hpp"
 
 class ATarget;
@@ -24,23 +23,23 @@ class ATarget;
 class ASpell {
 
 	protected:
-		std::string	_name;
-		std::string	_effects;
+		std::string _name;
+		std::string _effects;
 
 	public:
 		ASpell();
-		ASpell(const ASpell& original);
-		ASpell& operator=(const ASpell& original);
+		ASpell(const ASpell& og);
+		ASpell& operator=(const ASpell& og);
 		virtual ~ASpell();
 
 		ASpell(const std::string& name, const std::string& fx);
 
-		std::string	const& getName() const;
+		std::string const& getName() const;
 		std::string const& getEffects() const;
 
-		void launch(const ATarget& target);
+		void	launch(const ATarget& target);
 
-		virtual ASpell	*clone() const = 0;
+		virtual ASpell *clone() const = 0;
 
 };
 

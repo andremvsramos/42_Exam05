@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fwoosh.hpp                                         :+:      :+:    :+:   */
+/*   Polymorph.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 14:59:49 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 14:59:49 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/05 18:04:04 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/05 18:04:04 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Polymorph : public ASpell {
 
 	public:
 		Polymorph();
-		// Polymorph(const Polymorph& original);
-		// Polymorph& operator=(const Polymorph& original);
+		Polymorph(const Polymorph& og);
+		Polymorph& operator=(const Polymorph& og);
 		virtual ~Polymorph();
 
 		Polymorph *clone() const;

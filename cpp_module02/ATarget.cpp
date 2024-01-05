@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 14:27:32 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 14:27:32 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/05 17:57:49 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/05 17:57:49 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 ATarget::ATarget() : _type("DefaultType") {}
 
-ATarget::ATarget(const ATarget& original) :
-	_type(original._type) {}
+ATarget::ATarget(const ATarget& og) : _type(og.getType()) {}
 
-ATarget& ATarget::operator=(const ATarget& original) {
-	if (this != &original) _type = original._type;
+ATarget& ATarget::operator=(const ATarget& og) {
+	if (this != &og) _type = og.getType();
 	return (*this);
 }
 
@@ -32,6 +31,6 @@ std::string const& ATarget::getType() const {
 	return (_type);
 }
 
-void ATarget::getHitBySpell(const ASpell& spell) const {
+void	ATarget::getHitBySpell(const ASpell& spell) const {
 	std::cout << getType() << " has been " << spell.getEffects() << "!" << std::endl;
 }

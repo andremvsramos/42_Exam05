@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 14:23:38 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 14:23:38 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/05 17:55:08 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/05 17:55:08 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,22 @@ class ASpell;
 class ATarget {
 
 	protected:
-		std::string	_type;
+		std::string _type;
 
 	public:
 		ATarget();
-		ATarget(const ATarget& original);
-		ATarget& operator=(const ATarget& original);
+		ATarget(const ATarget& og);
+		ATarget& operator=(const ATarget& og);
 		virtual ~ATarget();
 
 		ATarget(const std::string& type);
 
 		std::string const& getType() const;
 
-		void getHitBySpell(const ASpell& spell) const;
+		void	getHitBySpell(const ASpell& spell) const;
 
 		virtual ATarget *clone() const = 0;
+
 };
 
 #endif

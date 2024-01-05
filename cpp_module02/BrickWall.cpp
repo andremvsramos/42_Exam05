@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 15:08:23 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 15:08:23 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/05 18:12:56 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/05 18:12:56 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 BrickWall::BrickWall() : ATarget("Inconspicuous Red-brick Wall") {}
 
-// BrickWall::BrickWall(const BrickWall& original) : ATarget(original) {}
+// BrickWall::BrickWall(const BrickWall& og) : ATarget(og) {}
 
-// BrickWall& BrickWall::operator=(const BrickWall& original) {
-// 	if (this != &original) ATarget::operator=(original);
+// BrickWall& BrickWall::operator=(const BrickWall& og) {
+// 	if (this != &og) ATarget::operator=(og);
 // 	return (*this);
 // }
 
 BrickWall::~BrickWall() {}
 
-BrickWall *BrickWall::clone() const {
+
+BrickWall*	BrickWall::clone() const {
 	return (new BrickWall(*this));
 }

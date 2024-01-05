@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fwoosh.cpp                                         :+:      :+:    :+:   */
+/*   Fireball.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 14:59:47 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 14:59:47 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/05 18:08:14 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/05 18:08:14 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 Fireball::Fireball() : ASpell("Fireball", "burnt to a crisp") {}
 
-Fireball::Fireball(const Fireball& original) : ASpell(original) {}
+Fireball::Fireball(const Fireball& og) : ASpell(og) {}
 
-Fireball& Fireball::operator=(const Fireball& original) {
-	if (this != &original) ASpell::operator=(original);
+Fireball& Fireball::operator=(const Fireball& og) {
+	if (this != &og) ASpell::operator=(og);
 	return (*this);
 }
 
 Fireball::~Fireball() {}
 
-Fireball *Fireball::clone() const {
+
+Fireball*	Fireball::clone() const {
 	return (new Fireball(*this));
 }

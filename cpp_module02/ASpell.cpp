@@ -5,22 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 14:10:16 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 14:10:16 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/05 17:50:05 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/05 17:50:05 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ASpell.hpp"
+ #include "ASpell.hpp"
 
 ASpell::ASpell() : _name("DefaultName"), _effects("DefaultFX") {}
 
-ASpell::ASpell(const ASpell& original) :
-	_name(original._name), _effects(original._effects) {}
+ASpell::ASpell(const ASpell& og) :
+	_name(og.getName()), _effects(og.getEffects()) {}
 
-ASpell&	ASpell::operator=(const ASpell& original) {
-	if (this != &original) {
-		_name = original._name;
-		_effects = original._effects;
+ASpell& ASpell::operator=(const ASpell& og) {
+	if (this != &og) {
+		_name = og.getName();
+		_effects = og.getEffects();
 	}
 	return (*this);
 }
@@ -39,6 +39,6 @@ std::string const& ASpell::getEffects() const {
 	return (_effects);
 }
 
-void ASpell::launch(const ATarget& target) {
+void	ASpell::launch(const ATarget& target) {
 	target.getHitBySpell(*this);
 }

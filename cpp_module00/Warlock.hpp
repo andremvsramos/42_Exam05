@@ -5,35 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 13:17:24 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 13:17:24 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/05 17:35:23 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/05 17:35:23 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WARLOCK_HPP
 # define WARLOCK_HPP
 
+# pragma once
 # include <iostream>
 # include <string>
 
 class Warlock {
 
 	private:
-		std::string	name;
-		std::string	title;
+		std::string	_name;
+		std::string	_title;
 		Warlock();
-		Warlock(const Warlock& original);
-		Warlock& operator=(const Warlock& original);
+		Warlock(const Warlock& og);
+		Warlock& operator=(const Warlock& og);
 
 	public:
-		~Warlock();
-
 		Warlock(const std::string& name, const std::string& title);
-
+		~Warlock();
 		std::string const& getName() const;
 		std::string const& getTitle() const;
-		void	setTitle(const std::string& input);
-
+		void	setTitle(const std::string& title);
 		void	introduce() const;
 
 };

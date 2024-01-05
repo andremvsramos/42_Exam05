@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 16:46:01 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 16:46:01 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/05 18:42:16 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/05 18:42:16 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,39 @@
 
 SpellBook::SpellBook() {}
 
-SpellBook::SpellBook(const SpellBook& original) {
-	(void)original;
+SpellBook::SpellBook(const SpellBook& og) {
+	(void)og;
 }
 
-SpellBook& SpellBook::operator=(const SpellBook& original) {
-	(void)original;
+SpellBook& SpellBook::operator=(const SpellBook& og) {
+	(void)og;
 	return (*this);
 }
 
 SpellBook::~SpellBook() {
-	std::map<std::string, ASpell*>::iterator itBegin;
-	for (itBegin = _slots.begin(); itBegin != _slots.end(); itBegin++)
-		delete itBegin->second;
-	_slots.clear();
+	std::map<std::string, ASpell*>::iterator it;
+	for (it = _spellSlots.begin(); it != _spellSlots.end(); it++)
+		delete it->second;
+	_spellSlots.clear();
 }
 
-
-void	SpellBook::learnSpell(ASpell *spell) {
+void	SpellBook::learnSpell(ASpell* spell) {
 	if (spell)
-		_slots.insert(std::pair<std::string, ASpell*>(spell->getName(), spell->clone()));
+		_spellSlots.insert(std::pair<std::string, ASpell*>(spell->getName(), spell->clone()));
 }
 
 void	SpellBook::forgetSpell(std::string const & spell) {
-	std::map<std::string, ASpell*>::iterator	it;
-	it = _slots.find(spell);
-	if (it != _slots.end()) {
+	std::map<std::string, ASpell*>::iterator it;
+	it = _spellSlots.find(spell);
+	if (it != _spellSlots.end()) {
 		delete it->second;
-		_slots.erase(spell);
+		_spellSlots.erase(spell);
 	}
 }
 
-ASpell	*SpellBook::createSpell(std::string const & spell) {
+ASpell*	SpellBook::createSpell(std::string const & spell) {
 	std::map<std::string, ASpell*>::iterator it;
-	it = _slots.find(spell);
-	if (it != _slots.end()) return it->second;
+	it = _spellSlots.find(spell);
+	if (it != _spellSlots.end()) return it->second;
 	else return NULL;
 }
