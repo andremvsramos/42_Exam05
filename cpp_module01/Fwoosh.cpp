@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 18:08:14 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 18:08:14 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/08 15:56:06 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/08 15:56:06 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 Fwoosh::Fwoosh() : ASpell("Fwoosh", "fwooshed") {}
 
-Fwoosh::Fwoosh(const Fwoosh& og) : ASpell(og) {}
+Fwoosh::Fwoosh(const Fwoosh& original) : ASpell(original) {}
 
-Fwoosh& Fwoosh::operator=(const Fwoosh& og) {
-	if (this != &og) ASpell::operator=(og);
+Fwoosh& Fwoosh::operator=(const Fwoosh& original) {
+	if (this != &original) ASpell::operator=(original);
 	return (*this);
 }
 
 Fwoosh::~Fwoosh() {}
-
 
 Fwoosh*	Fwoosh::clone() const {
 	return (new Fwoosh(*this));

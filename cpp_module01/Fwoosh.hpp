@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 18:04:04 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 18:04:04 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/08 15:54:33 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/08 15:54:33 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class Fwoosh : public ASpell {
 
 	public:
 		Fwoosh();
-		Fwoosh(const Fwoosh& og);
-		Fwoosh& operator=(const Fwoosh& og);
+		Fwoosh(const Fwoosh& original);
+		Fwoosh& operator=(const Fwoosh& original);
 		virtual ~Fwoosh();
 
-		Fwoosh *clone() const;
+		Fwoosh* clone() const;
 
 };
 

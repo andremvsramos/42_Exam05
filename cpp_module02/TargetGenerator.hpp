@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SpellBook.hpp                                      :+:      :+:    :+:   */
+/*   TargetGenerator.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 18:38:40 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 18:38:40 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/08 16:16:53 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/08 16:16:53 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,17 @@ class ATarget;
 class TargetGenerator {
 
 	private:
-		TargetGenerator(const TargetGenerator& og);
-		TargetGenerator& operator=(const TargetGenerator& og);
-		std::map<std::string, ATarget*> _targets;
+		TargetGenerator(const TargetGenerator& original);
+		TargetGenerator& operator=(const TargetGenerator& original);
+		std::map<std::string, ATarget*>	_targets;
 
 	public:
 		TargetGenerator();
 		~TargetGenerator();
 
 		void	learnTargetType(ATarget* target);
-		void	forgetTargetType(std::string const & target);
-		ATarget*	createTarget(std::string const & target);
+		void	forgetTargetType(std::string const& target);
+		ATarget*	createTarget(std::string const& target);
 
 };
 

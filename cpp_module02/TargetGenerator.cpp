@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TargetGenerator.cpp                                      :+:      :+:    :+:   */
+/*   SpellBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 18:42:16 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 18:42:16 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/08 16:19:54 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/08 16:19:54 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 TargetGenerator::TargetGenerator() {}
 
-TargetGenerator::TargetGenerator(const TargetGenerator& og) {
-	(void)og;
+TargetGenerator::TargetGenerator(const TargetGenerator& original) {
+	(void)original;
 }
 
-TargetGenerator& TargetGenerator::operator=(const TargetGenerator& og) {
-	(void)og;
+TargetGenerator& TargetGenerator::operator=(const TargetGenerator& original) {
+	(void)original;
 	return (*this);
 }
 
@@ -35,7 +35,7 @@ void	TargetGenerator::learnTargetType(ATarget* target) {
 		_targets.insert(std::pair<std::string, ATarget*>(target->getType(), target->clone()));
 }
 
-void	TargetGenerator::forgetTargetType(std::string const & target) {
+void	TargetGenerator::forgetTargetType(std::string const& target) {
 	std::map<std::string, ATarget*>::iterator it;
 	it = _targets.find(target);
 	if (it != _targets.end()) {
@@ -44,7 +44,7 @@ void	TargetGenerator::forgetTargetType(std::string const & target) {
 	}
 }
 
-ATarget*	TargetGenerator::createTarget(std::string const & target) {
+ATarget*	TargetGenerator::createTarget(std::string const& target) {
 	std::map<std::string, ATarget*>::iterator it;
 	it = _targets.find(target);
 	if (it != _targets.end()) return it->second;

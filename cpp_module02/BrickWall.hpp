@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 18:11:43 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 18:11:43 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/08 15:58:14 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/08 15:58:14 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class BrickWall : public ATarget {
 
 	public:
 		BrickWall();
-		// BrickWall(const BrickWall& og);
-		// BrickWall& operator=(const BrickWall& og);
+		BrickWall(const BrickWall& original);
+		BrickWall& operator=(const BrickWall& original);
 		virtual ~BrickWall();
 
-		BrickWall*	clone() const;
+		BrickWall* clone() const;
 
 };
 

@@ -5,28 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 17:50:05 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 17:50:05 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/08 15:44:13 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/08 15:44:13 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- #include "ASpell.hpp"
+#include "ASpell.hpp"
 
-ASpell::ASpell() : _name("DefaultName"), _effects("DefaultFX") {}
+ASpell::ASpell() : _name("default"), _effects("default") {}
 
-ASpell::ASpell(const ASpell& og) :
-	_name(og.getName()), _effects(og.getEffects()) {}
+ASpell::ASpell(const ASpell& original) :
+	_name(original._name), _effects(original._effects) {}
 
-ASpell& ASpell::operator=(const ASpell& og) {
-	if (this != &og) {
-		_name = og.getName();
-		_effects = og.getEffects();
+ASpell& ASpell::operator=(const ASpell& original) {
+	if (this != &original) {
+		_name = original._name;
+		_effects = original._effects;
 	}
 	return (*this);
 }
 
 ASpell::~ASpell() {}
-
 
 ASpell::ASpell(const std::string& name, const std::string& fx) :
 	_name(name), _effects(fx) {}

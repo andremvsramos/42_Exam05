@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 18:12:56 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 18:12:56 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/08 15:59:31 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/08 15:59:31 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 Dummy::Dummy() : ATarget("Target Practice Dummy") {}
 
-Dummy::Dummy(const Dummy& og) : ATarget(og) {}
+Dummy::Dummy(const Dummy& original) : ATarget(original) {}
 
-Dummy& Dummy::operator=(const Dummy& og) {
-	if (this != &og) ATarget::operator=(og);
+Dummy& Dummy::operator=(const Dummy& original) {
+	if (this != &original) ATarget::operator=(original);
 	return (*this);
 }
 
 Dummy::~Dummy() {}
-
 
 Dummy*	Dummy::clone() const {
 	return (new Dummy(*this));

@@ -5,28 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 17:38:53 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 17:38:53 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/08 15:32:43 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/08 15:32:43 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Warlock.hpp"
 
-Warlock::Warlock() {}
+Warlock::Warlock() : _name("Default"), _title("Default") {}
 
-Warlock::Warlock(const Warlock& og) {
-	(void)og;
+Warlock::Warlock(const Warlock& original) {
+	(void)original;
 }
 
-Warlock& Warlock::operator=(const Warlock& og) {
-	(void)og;
+Warlock& Warlock::operator=(const Warlock& original) {
+	(void)original;
 	return (*this);
 }
 
 Warlock::~Warlock() {
 	std::cout << getName() << ": My job here is done!" << std::endl;
 }
-
 
 Warlock::Warlock(const std::string& name, const std::string& title) :
 	_name(name), _title(title) {
@@ -53,20 +52,20 @@ void	Warlock::introduce() const {
 
 void	Warlock::learnSpell(ASpell* spell) {
 	if (spell)
-		_spellSlots.insert(std::pair<std::string, ASpell*>(spell->getName(), spell->clone()));
+		_slots.insert(std::pair<std::string, ASpell*>(spell->getName(), spell->clone()));
 }
 
 void	Warlock::forgetSpell(std::string spell) {
 	std::map<std::string, ASpell*>::iterator it;
-	it = _spellSlots.find(spell);
-	if (it != _spellSlots.end()) {
+	it = _slots.find(spell);
+	if (it != _slots.end()) {
 		delete it->second;
-		_spellSlots.erase(spell);
+		_slots.erase(spell);
 	}
 }
 
 void	Warlock::launchSpell(std::string spell, const ATarget& target) {
 	std::map<std::string, ASpell*>::iterator it;
-	it = _spellSlots.find(spell);
-	if (it != _spellSlots.end()) it->second->launch(target);
+	it = _slots.find(spell);
+	if (it != _slots.end()) it->second->launch(target);
 }

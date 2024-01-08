@@ -5,24 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 17:57:49 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 17:57:49 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/08 15:51:13 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/08 15:51:13 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ATarget.hpp"
 
-ATarget::ATarget() : _type("DefaultType") {}
+ATarget::ATarget() : _type("default") {}
 
-ATarget::ATarget(const ATarget& og) : _type(og.getType()) {}
+ATarget::ATarget(const ATarget& original) : _type(original._type) {}
 
-ATarget& ATarget::operator=(const ATarget& og) {
-	if (this != &og) _type = og.getType();
+ATarget& ATarget::operator=(const ATarget& original) {
+	if (this != &original) _type = original._type;
 	return (*this);
 }
 
 ATarget::~ATarget() {}
-
 
 ATarget::ATarget(const std::string& type) : _type(type) {}
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 17:46:37 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 17:46:37 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/08 15:41:06 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/08 15:41:06 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class ASpell {
 
 	public:
 		ASpell();
-		ASpell(const ASpell& og);
-		ASpell& operator=(const ASpell& og);
+		ASpell(const ASpell& original);
+		ASpell& operator=(const ASpell& original);
 		virtual ~ASpell();
 
 		ASpell(const std::string& name, const std::string& fx);
@@ -39,7 +39,7 @@ class ASpell {
 
 		void	launch(const ATarget& target);
 
-		virtual ASpell *clone() const = 0;
+		virtual ASpell* clone() const = 0;
 
 };
 

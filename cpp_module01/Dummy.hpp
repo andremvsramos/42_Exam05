@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 18:11:43 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 18:11:43 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/08 15:58:14 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/08 15:58:14 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class Dummy : public ATarget {
 
 	public:
 		Dummy();
-		Dummy(const Dummy& og);
-		Dummy& operator=(const Dummy& og);
+		Dummy(const Dummy& original);
+		Dummy& operator=(const Dummy& original);
 		virtual ~Dummy();
 
-		Dummy*	clone() const;
+		Dummy* clone() const;
 
 };
 

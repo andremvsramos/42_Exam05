@@ -5,28 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 17:38:53 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/05 17:38:53 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/08 15:32:43 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/08 15:32:43 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Warlock.hpp"
 
-Warlock::Warlock() {}
+Warlock::Warlock() : _name("Default"), _title("Default") {}
 
-Warlock::Warlock(const Warlock& og) {
-	(void)og;
+Warlock::Warlock(const Warlock& original) {
+	(void)original;
 }
 
-Warlock& Warlock::operator=(const Warlock& og) {
-	(void)og;
+Warlock& Warlock::operator=(const Warlock& original) {
+	(void)original;
 	return (*this);
 }
 
 Warlock::~Warlock() {
 	std::cout << getName() << ": My job here is done!" << std::endl;
 }
-
 
 Warlock::Warlock(const std::string& name, const std::string& title) :
 	_name(name), _title(title) {
@@ -53,14 +52,14 @@ void	Warlock::introduce() const {
 
 void	Warlock::learnSpell(ASpell* spell) {
 	if (spell)
-		_spellBook.learnSpell(spell);
+		_book.learnSpell(spell);
 }
 
 void	Warlock::forgetSpell(std::string spell) {
-	_spellBook.forgetSpell(spell);
+	_book.forgetSpell(spell);
 }
 
 void	Warlock::launchSpell(std::string spell, const ATarget& target) {
-	ASpell *toLaunch = _spellBook.createSpell(spell);
-	if (toLaunch) toLaunch->launch(target);
+	ASpell*	toLaunch = _book.createSpell(spell);
+	if(toLaunch) toLaunch->launch(target);
 }
