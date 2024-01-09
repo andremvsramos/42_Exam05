@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 15:48:03 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/08 15:48:03 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/09 15:35:25 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/09 15:35:25 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class ATarget {
 
 		void	getHitBySpell(const ASpell& spell) const;
 
-		virtual ATarget* clone() const = 0;
+		virtual	ATarget* clone() const = 0;
 
 };
 

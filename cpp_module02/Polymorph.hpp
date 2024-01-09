@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 15:54:33 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/08 15:54:33 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/09 15:41:33 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/09 15:41:33 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Polymorph : public ASpell {
 		virtual ~Polymorph();
 
 		Polymorph* clone() const;
-
 };
 
 #endif

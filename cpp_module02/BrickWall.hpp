@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BrickWall.hpp                                          :+:      :+:    :+:   */
+/*   BrickWall.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 15:58:14 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/08 15:58:14 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/09 15:41:33 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/09 15:41:33 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class BrickWall : public ATarget {
 		virtual ~BrickWall();
 
 		BrickWall* clone() const;
-
 };
 
 #endif

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SpellBook.cpp                                      :+:      :+:    :+:   */
+/*   TargetGenerator.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 16:19:54 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/08 16:19:54 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/09 16:03:15 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/09 16:03:15 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ TargetGenerator::TargetGenerator(const TargetGenerator& original) {
 
 TargetGenerator& TargetGenerator::operator=(const TargetGenerator& original) {
 	(void)original;
-	return (*this);
+	return *this;
 }
 
 TargetGenerator::~TargetGenerator() {
@@ -36,8 +36,7 @@ void	TargetGenerator::learnTargetType(ATarget* target) {
 }
 
 void	TargetGenerator::forgetTargetType(std::string const& target) {
-	std::map<std::string, ATarget*>::iterator it;
-	it = _targets.find(target);
+	std::map<std::string, ATarget*>::iterator	it = _targets.find(target);
 	if (it != _targets.end()) {
 		delete it->second;
 		_targets.erase(target);
@@ -45,8 +44,7 @@ void	TargetGenerator::forgetTargetType(std::string const& target) {
 }
 
 ATarget*	TargetGenerator::createTarget(std::string const& target) {
-	std::map<std::string, ATarget*>::iterator it;
-	it = _targets.find(target);
+	std::map<std::string, ATarget*>::iterator	it = _targets.find(target);
 	if (it != _targets.end()) return it->second;
 	return NULL;
 }

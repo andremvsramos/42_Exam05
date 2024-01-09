@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 15:29:46 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/08 15:29:46 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/09 15:19:47 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/09 15:19:47 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Warlock {
 		Warlock();
 		Warlock(const Warlock& original);
 		Warlock& operator=(const Warlock& original);
-		std::string _name;
+		std::string	_name;
 		std::string _title;
 
 	public:
@@ -34,6 +34,7 @@ class Warlock {
 		std::string const& getTitle() const;
 
 		void	setTitle(const std::string& title);
+
 		void	introduce() const;
 
 };

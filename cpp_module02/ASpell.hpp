@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 15:41:06 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/08 15:41:06 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/09 15:29:05 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/09 15:29:05 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class ATarget;
 class ASpell {
 
 	protected:
-		std::string _name;
-		std::string _effects;
+		std::string	_name;
+		std::string	_fx;
 
 	public:
 		ASpell();
@@ -35,7 +35,7 @@ class ASpell {
 		ASpell(const std::string& name, const std::string& fx);
 
 		std::string const& getName() const;
-		std::string const& getEffects() const;
+		std::string const& getFX() const;
 
 		void	launch(const ATarget& target);
 

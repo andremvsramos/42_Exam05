@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 15:32:43 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/08 15:32:43 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/09 15:22:45 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/09 15:22:45 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Warlock.hpp"
 
-Warlock::Warlock() : _name("Default"), _title("Default") {}
+Warlock::Warlock() : _name("default"), _title("default") {}
 
 Warlock::Warlock(const Warlock& original) {
 	(void)original;
@@ -33,13 +33,12 @@ Warlock::Warlock(const std::string& name, const std::string& title) :
 	std::cout << getName() << ": This looks like another boring day." << std::endl;
 }
 
-
 std::string const& Warlock::getName() const {
-	return (_name);
+	return _name;
 }
 
 std::string const& Warlock::getTitle() const {
-	return (_title);
+	return _title;
 }
 
 void	Warlock::setTitle(const std::string& title) {

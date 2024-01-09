@@ -5,37 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 15:44:13 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/08 15:44:13 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/09 15:31:22 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/09 15:31:22 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ASpell.hpp"
 
-ASpell::ASpell() : _name("default"), _effects("default") {}
+ASpell::ASpell() : _name("default"), _fx("default") {}
 
 ASpell::ASpell(const ASpell& original) :
-	_name(original._name), _effects(original._effects) {}
+	_name(original.getName()), _fx(original.getFX()) {}
 
 ASpell& ASpell::operator=(const ASpell& original) {
 	if (this != &original) {
-		_name = original._name;
-		_effects = original._effects;
+		_name = original.getName();
+		_fx = original.getFX();
 	}
-	return (*this);
+	return *this;
 }
 
 ASpell::~ASpell() {}
 
 ASpell::ASpell(const std::string& name, const std::string& fx) :
-	_name(name), _effects(fx) {}
+	_name(name), _fx(fx) {}
+
 
 std::string const& ASpell::getName() const {
-	return (_name);
+	return _name;
 }
 
-std::string const& ASpell::getEffects() const {
-	return (_effects);
+std::string const& ASpell::getFX() const {
+	return _fx;
 }
 
 void	ASpell::launch(const ATarget& target) {
