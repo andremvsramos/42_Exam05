@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 15:38:13 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/09 15:38:13 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/10 19:17:46 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/10 19:17:46 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 ATarget::ATarget() : _type("default") {}
 
-ATarget::ATarget(const ATarget& original) :
-	_type(original.getType()) {}
+ATarget::ATarget(const ATarget& original) : _type(original.getType()) {}
 
 ATarget& ATarget::operator=(const ATarget& original) {
 	if (this != &original) _type = original.getType();
@@ -23,7 +22,6 @@ ATarget& ATarget::operator=(const ATarget& original) {
 }
 
 ATarget::~ATarget() {}
-
 
 ATarget::ATarget(const std::string& type) : _type(type) {}
 

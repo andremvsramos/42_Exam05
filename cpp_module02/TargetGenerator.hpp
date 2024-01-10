@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 16:00:39 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/09 16:00:39 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/10 19:41:11 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/10 19:41:11 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@
 # include <map>
 # include "ATarget.hpp"
 
+class ATarget;
+
 class TargetGenerator {
 
 	private:
 		TargetGenerator(const TargetGenerator& original);
 		TargetGenerator& operator=(const TargetGenerator& original);
-		std::map<std::string, ATarget*> _targets;
+		std::map<std::string, ATarget*>	_targets;
 
 	public:
 		TargetGenerator();

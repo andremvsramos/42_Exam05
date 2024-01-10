@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 15:22:45 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/09 15:22:45 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/10 19:03:40 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/10 19:03:40 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ Warlock::Warlock(const Warlock& original) {
 	(void)original;
 }
 
-Warlock& Warlock::operator=(const Warlock& original) {
+Warlock&	Warlock::operator=(const Warlock& original) {
 	(void)original;
-	return (*this);
+	return *this;
 }
 
 Warlock::~Warlock() {
@@ -30,8 +30,9 @@ Warlock::~Warlock() {
 Warlock::Warlock(const std::string& name, const std::string& title) :
 	_name(name), _title(title) {
 
-	std::cout << getName() << ": This looks like another boring day." << std::endl;
+		std::cout << getName() << ": This looks like another boring day." << std::endl;
 }
+
 
 std::string const& Warlock::getName() const {
 	return _name;
@@ -55,7 +56,7 @@ void	Warlock::learnSpell(ASpell* spell) {
 }
 
 void	Warlock::forgetSpell(std::string spell) {
-	std::map<std::string, ASpell*>::iterator	it = _slots.find(spell);
+	std::map<std::string, ASpell*>::iterator it = _slots.find(spell);
 	if (it != _slots.end()) {
 		delete it->second;
 		_slots.erase(spell);
@@ -63,6 +64,6 @@ void	Warlock::forgetSpell(std::string spell) {
 }
 
 void	Warlock::launchSpell(std::string spell, const ATarget& target) {
-	std::map<std::string, ASpell*>::iterator	it = _slots.find(spell);
+	std::map<std::string, ASpell*>::iterator it = _slots.find(spell);
 	if (it != _slots.end()) it->second->launch(target);
 }

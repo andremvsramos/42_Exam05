@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 15:43:04 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/09 15:43:04 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/10 19:21:53 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/10 19:21:53 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ Fireball::Fireball() : ASpell("Fireball", "burnt to a crisp") {}
 
 Fireball::Fireball(const Fireball& original) : ASpell(original) {}
 
-Fireball&	Fireball::operator=(const Fireball& original) {
+Fireball& Fireball::operator=(const Fireball& original) {
 	if (this != &original) ASpell::operator=(original);
 	return *this;
 }
 
 Fireball::~Fireball() {}
 
-Fireball*	Fireball::clone() const {
+Fireball* Fireball::clone() const {
 	return new Fireball(*this);
 }
