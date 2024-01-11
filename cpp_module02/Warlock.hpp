@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 19:01:05 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/10 19:01:05 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/11 21:17:43 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/11 21:17:43 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # include "ASpell.hpp"
 # include "SpellBook.hpp"
 
-class ASpell;
 class ATarget;
+class ASpell;
 class SpellBook;
 
 class Warlock {
@@ -32,8 +32,8 @@ class Warlock {
 		Warlock();
 		Warlock(const Warlock& original);
 		Warlock& operator=(const Warlock& original);
-		std::string _name;
-		std::string _title;
+		std::string	_name;
+		std::string	_title;
 		SpellBook	_book;
 
 	public:

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 19:41:11 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/10 19:41:11 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/11 21:51:11 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/11 21:51:11 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,14 @@ class TargetGenerator {
 	private:
 		TargetGenerator(const TargetGenerator& original);
 		TargetGenerator& operator=(const TargetGenerator& original);
-		std::map<std::string, ATarget*>	_targets;
+		std::map<std::string, ATarget*> _targets;
 
 	public:
 		TargetGenerator();
 		~TargetGenerator();
-
 		void	learnTargetType(ATarget* target);
 		void	forgetTargetType(std::string const& target);
 		ATarget*	createTarget(std::string const& target);
-
 };
 
 #endif

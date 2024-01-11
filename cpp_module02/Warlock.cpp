@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 19:03:40 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/10 19:03:40 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/11 21:20:21 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/11 21:20:21 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Warlock::Warlock(const Warlock& original) {
 	(void)original;
 }
 
-Warlock&	Warlock::operator=(const Warlock& original) {
+Warlock& Warlock::operator=(const Warlock& original) {
 	(void)original;
 	return *this;
 }
@@ -29,12 +29,10 @@ Warlock::~Warlock() {
 
 Warlock::Warlock(const std::string& name, const std::string& title) :
 	_name(name), _title(title) {
-
 		std::cout << getName() << ": This looks like another boring day." << std::endl;
-}
+	}
 
-
-std::string const& Warlock::getName() const {
+std::string	const& Warlock::getName() const {
 	return _name;
 }
 
@@ -59,6 +57,6 @@ void	Warlock::forgetSpell(std::string spell) {
 }
 
 void	Warlock::launchSpell(std::string spell, const ATarget& target) {
-	ASpell*	toLaunch = _book.createSpell(spell);
+	ASpell* toLaunch = _book.createSpell(spell);
 	if (toLaunch) toLaunch->launch(target);
 }

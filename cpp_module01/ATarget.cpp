@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 19:17:46 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/10 19:17:46 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/11 21:33:42 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/11 21:33:42 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ ATarget& ATarget::operator=(const ATarget& original) {
 ATarget::~ATarget() {}
 
 ATarget::ATarget(const std::string& type) : _type(type) {}
-
 
 std::string const& ATarget::getType() const {
 	return _type;

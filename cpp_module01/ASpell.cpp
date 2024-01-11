@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 19:11:48 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/10 19:11:48 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/11 21:27:48 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/11 21:27:48 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ ASpell& ASpell::operator=(const ASpell& original) {
 }
 
 ASpell::~ASpell() {}
-
 
 ASpell::ASpell(const std::string& name, const std::string& fx) :
 	_name(name), _fx(fx) {}

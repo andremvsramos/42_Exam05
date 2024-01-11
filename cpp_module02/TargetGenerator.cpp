@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 19:44:01 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/10 19:44:01 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/11 21:53:52 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/11 21:53:52 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ TargetGenerator& TargetGenerator::operator=(const TargetGenerator& original) {
 }
 
 TargetGenerator::~TargetGenerator() {
-	std::map<std::string, ATarget*>::iterator	it;
+	std::map<std::string, ATarget*>::iterator it;
 	for (it = _targets.begin(); it != _targets.end(); it++)
 		delete it->second;
 	_targets.clear();
@@ -32,7 +32,7 @@ TargetGenerator::~TargetGenerator() {
 
 void	TargetGenerator::learnTargetType(ATarget* target) {
 	if (target)
-			_targets.insert(std::pair<std::string, ATarget*>(target->getType(), target->clone()));
+		_targets.insert(std::pair<std::string, ATarget*>(target->getType(), target->clone()));
 }
 
 void	TargetGenerator::forgetTargetType(std::string const& target) {

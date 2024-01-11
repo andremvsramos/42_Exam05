@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 19:21:53 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/10 19:21:53 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/11 21:37:48 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/11 21:37:48 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Polymorph::Polymorph() : ASpell("Polymorph", "turned into a critter") {}
 
 Polymorph::Polymorph(const Polymorph& original) : ASpell(original) {}
 
-Polymorph& Polymorph::operator=(const Polymorph& original) {
+Polymorph&	Polymorph::operator=(const Polymorph& original) {
 	if (this != &original) ASpell::operator=(original);
 	return *this;
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andvieir <andvieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 19:44:01 by andvieir          #+#    #+#             */
-/*   Updated: 2024/01/10 19:44:01 by andvieir         ###   ########.fr       */
+/*   Created: 2024/01/11 21:53:52 by andvieir          #+#    #+#             */
+/*   Updated: 2024/01/11 21:53:52 by andvieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ SpellBook& SpellBook::operator=(const SpellBook& original) {
 }
 
 SpellBook::~SpellBook() {
-	std::map<std::string, ASpell*>::iterator	it;
+	std::map<std::string, ASpell*>::iterator it;
 	for (it = _slots.begin(); it != _slots.end(); it++)
 		delete it->second;
 	_slots.clear();
@@ -32,7 +32,7 @@ SpellBook::~SpellBook() {
 
 void	SpellBook::learnSpell(ASpell* spell) {
 	if (spell)
-			_slots.insert(std::pair<std::string, ASpell*>(spell->getName(), spell->clone()));
+		_slots.insert(std::pair<std::string, ASpell*>(spell->getName(), spell->clone()));
 }
 
 void	SpellBook::forgetSpell(std::string const& spell) {
